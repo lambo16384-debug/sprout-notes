@@ -1,0 +1,15 @@
+{
+  "name": "sprout-notes",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "以 AGENTS.md 驅動的繁體中文前端學習筆記站",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node scripts/check.mjs && node --test",
+    "dev": "node scripts/serve.mjs",
+    "publish:pages": "node scripts/build.mjs && node scripts/check.mjs && node scripts/pages.mjs"
+  },
+  "engines": { "node": ">=20" }
+}
