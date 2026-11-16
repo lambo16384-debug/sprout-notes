@@ -1,0 +1,12 @@
+{
+  "slug": "css-grid", "title": "用 Grid 建立整齊的筆記牆", "category": "CSS", "summary": "當內容需要同時對齊欄與列，使用 Grid 建立一致的卡片區，並把版面規則集中在父容器。", "minutes": 5, "order": 4, "updated": "2026-11-16", "tags": ["Grid", "卡片"],
+  "goal": "能設定等寬三欄卡片，並說明 fr、repeat 與 gap 的用途。",
+  "concepts": [
+    { "heading": "先定義網格，再放入內容", "body": "Grid 適合二維排版：父容器決定欄數與間距，子元素依順序進入格子。筆記卡片不必自己知道是第幾欄；新增內容時會自動排入下一格。" },
+    { "heading": "把可用寬度分成等份", "body": "repeat(3, minmax(0, 1fr)) 產生三個等分欄位。fr 分配剩餘可用空間，minmax(0, 1fr) 允許欄位在有較長內容時縮小；內容本身仍需要適當的換行規則。" }
+  ],
+  "example": { "language": "css", "code": ".notes-grid {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 20px;\n}\n\n.note-card { min-width: 0; }",
+    "explanation": "三張卡片平均分配扣除 gap 後的空間。小螢幕需要再配合 media query 減少欄數。" },
+  "exercise": { "prompt": "把桌面版筆記牆改成兩欄，每欄等寬、間距 24px，應修改哪兩個值？", "solution": "將 grid-template-columns 改成 repeat(2, minmax(0, 1fr))，並將 gap 改成 24px。卡片 HTML 不需要修改。" },
+  "references": [{ "label": "MDN：Basic concepts of grid layout", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout/Basic_concepts_of_grid_layout" }]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "html-semantic", "title": "讓 HTML 說清楚內容的角色", "category": "HTML", "summary": "從一個簡單的筆記頁開始，認識語意標籤與標題階層，讓人與輔助工具都能理解你的內容。", "minutes": 5, "order": 1, "updated": "2026-11-16", "tags": ["語意化", "無障礙"],
+  "goal": "能為筆記頁選擇 header、nav、main 與 article，並安排合理的標題階層。",
+  "concepts": [
+    { "heading": "先問內容扮演什麼角色", "body": "header 放介紹資訊，nav 放主要導覽，main 是頁面的主要內容，article 適合可以獨立理解的文章。標籤描述的是內容角色，不是預設外觀；外觀交給 CSS。" },
+    { "heading": "用標題畫出文章大綱", "body": "本專案每頁使用一個 h1 作為主標題，各大段落用 h2，段落內的子主題用 h3。不要因為某個標題看起來比較小就跳過層級，應以 CSS 調整尺寸。" }
+  ],
+  "example": { "language": "html", "code": "<header>我的學習筆記</header>\n<nav aria-label=\"主要導覽\">\n  <a href=\"index.html\">所有筆記</a>\n</nav>\n<main>\n  <article>\n    <h1>認識 HTML</h1>\n    <h2>今天的學習目標</h2>\n    <p>用標籤表達內容的角色。</p>\n  </article>\n</main>", "explanation": "main 集中主要內容，article 包住完整筆記，h1 與 h2 形成可理解的閱讀順序。" },
+  "exercise": { "prompt": "替一篇介紹 CSS 的筆記安排主標題，以及「概念」「範例」「練習」三個段落的標籤。", "solution": "主標題用 h1，三個段落標題各用 h2，整篇包在 article 裡，再放進 main。文章中的說明用 p，不用連續的 br 代替段落。" },
+  "references": [{ "label": "MDN：HTML elements reference", "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements" }]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "git-workflow", "title": "把一次修改整理成清楚的提交", "category": "Workflow", "summary": "讓未來的自己看得懂改了什麼：從檢查差異、加入檔案到提交，把小步修改變成可追蹤的紀錄。", "minutes": 5, "order": 6, "updated": "2026-11-16", "tags": ["Git", "版本控制"],
+  "goal": "能在本機 Git repository 中檢查變更，並只提交本次任務相關的檔案。",
+  "concepts": [
+    { "heading": "提交前先看差異", "body": "git status 顯示哪些檔案改動；git diff 顯示尚未暫存的內容差異。先確認沒有帳密、私人資料或無關檔案，再用 git add 指定本次需要的路徑。" },
+    { "heading": "一個提交說明一件事", "body": "提交訊息可以用「新增：響應式設計筆記」描述結果。不要把大量不相關的修改混在一起。commit 是本機歷史，push 才會把提交送到遠端；網站是否更新還取決於發布設定。" }
+  ],
+  "example": { "language": "shell", "code": "git status\ngit diff\ngit add content/notes/css-responsive.json docs dist\ngit diff --staged\ngit commit -m \"新增：響應式設計筆記\"\ngit push origin main", "explanation": "範例假設 repository、身分及 origin 已設定。先完成建置與檢查，再加入內容和發布輸出；提交前用 --staged 確認實際要保存的差異。" },
+  "exercise": { "prompt": "若 git status 同時出現本次筆記與一份私人草稿，應該使用 git add . 嗎？", "solution": "先只加入筆記與必要的建置輸出路徑，檢查 git diff --staged，確定私人草稿沒有被加入。需要長期排除的檔案可以依專案需求加入 .gitignore。" },
+  "references": [{ "label": "Git 官方手冊：Recording Changes", "url": "https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository" }]
+}

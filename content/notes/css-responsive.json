@@ -1,0 +1,11 @@
+{
+  "slug": "css-responsive", "title": "讓同一頁在手機也好好閱讀", "category": "CSS", "summary": "沿用筆記牆的版型，加入由三欄變一欄的規則，練習依內容需求設定斷點與檢查小螢幕體驗。", "minutes": 6, "order": 7, "updated": "2026-11-16", "tags": ["響應式", "Media Query"],
+  "goal": "能以 media query 調整欄數，並檢查窄螢幕下的文字、按鈕與程式碼區。",
+  "concepts": [
+    { "heading": "同一份內容，調整呈現方式", "body": "響應式設計讓版面隨可用空間調整，而不是另外維護一份手機版內容。當三欄卡片變得太擠，就降低欄數；斷點應依內容是否好讀來決定，不必追逐每一種手機型號。" },
+    { "heading": "不只檢查欄數", "body": "手機上也要確認導覽能換行、按鈕方便點擊、長文字不溢出。程式碼可以在自己的區塊橫向捲動，但整個頁面不應被撐寬。viewport meta 標籤則讓瀏覽器按裝置寬度呈現版面。" }
+  ],
+  "example": { "language": "css", "code": ".notes-grid {\n  display: grid;\n  grid-template-columns: repeat(3, minmax(0, 1fr));\n  gap: 20px;\n}\n@media (max-width: 1050px) {\n  .notes-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }\n}\n@media (max-width: 700px) {\n  .notes-grid { grid-template-columns: 1fr; }\n}\npre { overflow-x: auto; }", "explanation": "這段規則對應本專案的三欄、兩欄、一欄筆記牆。同樣的卡片內容可以跨尺寸重用，不需要複製文章。" },
+  "exercise": { "prompt": "把瀏覽器調成 375px 寬，列出除了欄數以外，還應檢查的三件事。", "solution": "例如：頁面是否出現整體橫向捲動；搜尋框與分類是否能完整操作；程式碼區能否獨立捲動。也應確認標題不被裁切、按鈕有足夠間距，以及鍵盤焦點清楚可見。" },
+  "references": [{ "label": "MDN：Responsive web design", "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design" }]
+}

@@ -1,0 +1,11 @@
+{
+  "slug": "css-flexbox", "title": "用 Flexbox 排好一列導覽", "category": "CSS", "summary": "把導覽列當作第一個練習，理解主軸、交錯軸與換行，讓項目在不同空間下仍然有秩序。", "minutes": 6, "order": 3, "updated": "2026-11-16", "tags": ["Flexbox", "排版"],
+  "goal": "能使用 flex、gap 與 flex-wrap 製作可換行的分類導覽。",
+  "concepts": [
+    { "heading": "一次安排一個方向", "body": "Flexbox 適合導覽、按鈕列等一維排列。預設主軸是橫向；justify-content 控制主軸上的分布，align-items 控制交錯軸上的對齊。改成 flex-direction: column 後，軸的方向也會改變。" },
+    { "heading": "讓空間不足時有退路", "body": "不要假設所有螢幕都能塞下一列項目。使用 flex-wrap: wrap 允許換行，再用 gap 同時管理水平與垂直間距，就不需要逐一對按鈕設定 margin。" }
+  ],
+  "example": { "language": "css", "code": ".filters {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 8px;\n}\n\n.filters button {\n  padding: 10px 16px;\n}", "explanation": "父容器負責排列與間距，按鈕負責自身的內距。這個分工讓新增一個分類時不用重新調整其他按鈕。" },
+  "exercise": { "prompt": "把三個按鈕排成垂直一列，並讓它們靠左對齊，該增加哪些設定？", "solution": "在父容器加入 flex-direction: column 與 align-items: flex-start。此時主軸變成垂直方向，align-items 控制水平方向。" },
+  "references": [{ "label": "MDN：Basic concepts of flexbox", "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox" }]
+}

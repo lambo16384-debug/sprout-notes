@@ -1,0 +1,11 @@
+{
+  "slug": "css-box-model", "title": "用盒模型掌握元素的空間", "category": "CSS", "summary": "卡片為什麼比設定的寬度更大？從內容、內距、邊框與外距四個層次，拆解常見的排版困惑。", "minutes": 6, "order": 2, "updated": "2026-11-16", "tags": ["盒模型", "間距"],
+  "goal": "能區分 padding 與 margin，並用 border-box 預測卡片的尺寸。",
+  "concepts": [
+    { "heading": "由內向外看一個盒子", "body": "content 是內容區，padding 是內容與邊框之間的留白，border 包住內距與內容，margin 則是盒子外側的距離。卡片內文太貼邊時調 padding，兩張卡片要分開時可用父容器的 gap。" },
+    { "heading": "讓設定寬度更容易理解", "body": "預設的 content-box 把 width 當成內容寬度，padding 和 border 會額外增加外尺寸。border-box 讓 width 包含 padding 與 border，但仍不包含 margin。" }
+  ],
+  "example": { "language": "css", "code": "* { box-sizing: border-box; }\n\n.card {\n  width: 280px;\n  padding: 20px;\n  border: 1px solid #cdd9cf;\n  margin: 12px;\n}", "explanation": "卡片的邊框外緣寬度是 280px，內容區寬度為 238px（280 − 40 − 2），左右 margin 另計。" },
+  "exercise": { "prompt": "一張 border-box 卡片寬 320px，左右 padding 各 24px、左右 border 各 2px，內容區寬度是多少？", "solution": "320 − 24 × 2 − 2 × 2 = 268px。margin 不包含在 width 的 320px 內。" },
+  "references": [{ "label": "MDN：The box model", "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Box_model" }]
+}

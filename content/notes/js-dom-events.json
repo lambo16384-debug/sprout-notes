@@ -1,0 +1,11 @@
+{
+  "slug": "js-dom-events", "title": "讓按鈕回應你的第一個點擊", "category": "JavaScript", "summary": "從一顆已讀按鈕出發，練習選取 DOM、監聽事件與更新文字，理解網頁互動的基本循環。", "minutes": 7, "order": 5, "updated": "2026-11-16", "tags": ["DOM", "事件"],
+  "goal": "能以 addEventListener 監聽按鈕，並同時更新可見文字與 aria-pressed。",
+  "concepts": [
+    { "heading": "元素、事件、狀態", "body": "先用 querySelector 取得元素，再用 addEventListener 註冊事件處理函式。點擊時修改程式中的狀態，最後把新狀態反映到畫面；不要只改外觀而忘記語意狀態。" },
+    { "heading": "文字輸出使用 textContent", "body": "textContent 會把字串當作文字呈現。若內容來自搜尋框或其他使用者輸入，不要直接塞進 innerHTML，避免輸入被解析成網頁標籤。這個範例只示範當次頁面的狀態，重載後會重設。" }
+  ],
+  "example": { "language": "html / js", "code": "<button id=\"read\" aria-pressed=\"false\">標記已讀</button>\n<script>\n  const button = document.querySelector('#read');\n  let read = false;\n  button.addEventListener('click', () => {\n    read = !read;\n    button.textContent = read ? '已讀 ✓' : '標記已讀';\n    button.setAttribute('aria-pressed', String(read));\n  });\n</script>", "explanation": "read 是唯一的狀態來源；每次點擊都切換布林值，再同步更新按鈕文字與可及性屬性。" },
+  "exercise": { "prompt": "將按鈕改成「收藏／已收藏」切換，應該調整哪些地方？", "solution": "把初始文字改為「收藏」，點擊後的 textContent 改為 read ? '已收藏 ★' : '收藏'。也可以把狀態變數改名為 saved 讓用途更清楚，aria-pressed 仍維持布林值字串。" },
+  "references": [{ "label": "MDN：EventTarget.addEventListener", "url": "https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" }]
+}
