@@ -1,0 +1,18 @@
+{
+  "slug": "replace-me",
+  "title": "請填寫六到四十字的標題",
+  "category": "CSS",
+  "summary": "請用二十到一百字摘要說明這篇筆記能解決的問題與讀者可以帶走的觀念。",
+  "minutes": 5,
+  "order": 8,
+  "updated": "2026-11-16",
+  "tags": ["請替換"],
+  "goal": "完成後能夠……",
+  "concepts": [
+    { "heading": "第一個核心觀念", "body": "請用自己的話說明並舉例。" },
+    { "heading": "第二個核心觀念", "body": "請說明常見誤解或使用時機。" }
+  ],
+  "example": { "language": "css", "code": "/* 請加入可理解的最小範例 */", "explanation": "逐步說明程式與概念的對應。" },
+  "exercise": { "prompt": "設計一個可以實際完成的小任務。", "solution": "提供可自我檢查的參考解答。" },
+  "references": [{ "label": "MDN 官方參考（請改為對應主題）", "url": "https://developer.mozilla.org/" }]
+}
